@@ -6,13 +6,13 @@ import { AboutMeComponent } from './about-me.component';
 
 @NgModule({
   declarations: [
-    AboutMeComponent
+    AboutMeComponent,
   ],
   imports: [
     CommonModule,
   ],
   exports: [
     AboutMeComponent,
-  ]
+  ],
 })
 export class AboutMeModule { }

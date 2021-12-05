@@ -13,7 +13,7 @@ import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
-    PortfolioComponent
+    PortfolioComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +24,6 @@ import { ContactModule } from './contact/contact.module';
     MyWorksModule,
     ContactModule,
     SidebarModule,
-  ]
+  ],
 })
 export class PortfolioModule { }

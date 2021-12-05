@@ -6,13 +6,13 @@ import { ContactComponent } from './contact.component';
 
 @NgModule({
   declarations: [
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     CommonModule,
   ],
   exports: [
     ContactComponent,
-  ]
+  ],
 })
 export class ContactModule { }

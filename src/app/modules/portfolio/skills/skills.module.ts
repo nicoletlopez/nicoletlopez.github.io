@@ -6,13 +6,13 @@ import { SkillsComponent } from './skills.component';
 
 @NgModule({
   declarations: [
-    SkillsComponent
+    SkillsComponent,
   ],
   imports: [
     CommonModule,
   ],
   exports: [
     SkillsComponent,
-  ]
+  ],
 })
 export class SkillsModule { }

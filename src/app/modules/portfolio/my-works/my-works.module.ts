@@ -6,13 +6,13 @@ import { MyWorksComponent } from './my-works.component';
 
 @NgModule({
   declarations: [
-    MyWorksComponent
+    MyWorksComponent,
   ],
   imports: [
     CommonModule,
   ],
   exports: [
     MyWorksComponent,
-  ]
+  ],
 })
 export class MyWorksModule { }
