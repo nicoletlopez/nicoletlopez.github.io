@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { SidebarMenu } from '../../config/sidebar-menu';
 
@@ -9,9 +10,18 @@ import { SidebarMenu } from '../../config/sidebar-menu';
 export class SidebarComponent implements OnInit {
   menuItems = SidebarMenu;
 
-  constructor() { }
+  constructor(
+    private viewportScroller: ViewportScroller
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onClickScroll(fragment) {
+    console.log(fragment);
+    this.viewportScroller.scrollToAnchor(fragment);
+    // document.querySelector(`#${fragment}`).scrollIntoView({
+    //   behavior: 'smooth'
+    // });
+  }
 }

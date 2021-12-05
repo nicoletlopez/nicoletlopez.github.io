@@ -3,3 +3,14 @@ main {
     display: grid;
     grid-template-columns: auto 1fr;
 }
+
+.portfolio {
+    &__body {
+        // max-height: 100vh;
+        // overflow: auto;
+    }
+}
+
+section {
+    height: 5000px;
+}
