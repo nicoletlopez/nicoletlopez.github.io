@@ -6,11 +6,11 @@ const routes: Routes = [
   {
     path: "",
     loadChildren: () => import('./modules/portfolio/portfolio.module').then(m => m.PortfolioModule),
-  }
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy', }),],
+  exports: [RouterModule,],
 })
 export class AppRoutingModule { }
