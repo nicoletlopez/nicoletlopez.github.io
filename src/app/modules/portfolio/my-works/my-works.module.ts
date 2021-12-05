@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MyWorksRoutingModule } from './my-works-routing.module';
 import { MyWorksComponent } from './my-works.component';
 
 
@@ -11,7 +10,9 @@ import { MyWorksComponent } from './my-works.component';
   ],
   imports: [
     CommonModule,
-    MyWorksRoutingModule
+  ],
+  exports: [
+    MyWorksComponent,
   ]
 })
 export class MyWorksModule { }

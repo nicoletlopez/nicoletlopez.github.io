@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SkillsRoutingModule } from './skills-routing.module';
 import { SkillsComponent } from './skills.component';
 
 
@@ -11,7 +10,9 @@ import { SkillsComponent } from './skills.component';
   ],
   imports: [
     CommonModule,
-    SkillsRoutingModule
+  ],
+  exports: [
+    SkillsComponent,
   ]
 })
 export class SkillsModule { }
