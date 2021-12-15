@@ -35,7 +35,9 @@
                 "src/assets/scss"
               ]
             },
-            "scripts": [],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js"
+            ],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,

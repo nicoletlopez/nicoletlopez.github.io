@@ -4,7 +4,7 @@
         <section class="sidebar__body">
             <ul class="sidebar__body-container">
                 <li *ngFor="let nav of menuItems" class="sidebar__item">
-                    <a class="sidebar__anchor" (click)="onClickScroll(nav?.fragment)">
+                    <a class="sidebar__anchor" [attr.href]="'#'+nav.fragment">
                         <i [class]="nav.icon"></i>
                         <h4 class="sidebar__label">{{nav.label}}</h4>
                     </a>
