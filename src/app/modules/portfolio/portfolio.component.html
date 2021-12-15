@@ -2,7 +2,7 @@
     <aside>
         <app-sidebar></app-sidebar>
     </aside>
-    <div class="portfolio__body">
+    <div class="portfolio__body" [style.margin-left.px]="contentOffset">
         <section id="home">
             <app-home></app-home>
         </section>

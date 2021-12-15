@@ -1,20 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { SidebarMenu } from '../../config/sidebar-menu';
 import * as $ from 'jquery';
+import { SidebarWidthService } from 'src/app/services/sidebar-width/sidebar-width.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss',],
 })
 export class SidebarComponent implements OnInit {
+  @ViewChild('sidebar') sidebar: ElementRef;
   menuItems = SidebarMenu;
   selectedLink = "";
 
   constructor(
+    private readonly swService: SidebarWidthService,
   ) { }
 
   ngOnInit(): void {
     this.jquerySmoothScroll();
+  }
+
+
+  @HostListener('window:resize')
+  @HostListener('window:load')
+  setSidebarWidth() {
+    this.swService.setWidth(this.sidebar.nativeElement.getBoundingClientRect().width);
   }
 
   jquerySmoothScroll() {
@@ -25,7 +35,6 @@ export class SidebarComponent implements OnInit {
         .not('[href="#"]')
         .not('[href="#0"]')
         .on('click', function (event) {
-          console.log("event");
           const currentTarget: any = event.currentTarget;
           // On-page links
           if (
