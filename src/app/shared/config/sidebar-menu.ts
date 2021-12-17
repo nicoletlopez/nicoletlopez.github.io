@@ -14,11 +14,11 @@ export const SidebarMenu: ISidebarMenu[] = [
     {
         label: "My Works",
         fragment: "my-work",
-        icon: "far fa-user",
+        icon: "far fa-folder-open",
     },
     {
         label: "Contact",
         fragment: "contact",
-        icon: "far fa-user",
+        icon: "far fa-address-card",
     },
 ]
