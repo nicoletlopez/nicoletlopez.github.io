@@ -3,17 +3,19 @@
         <app-sidebar></app-sidebar>
     </aside>
     <div class="portfolio__body" [style.margin-left.px]="contentOffset">
-        <section id="home">
+        <section class="portfolio__section" id="home">
             <app-home></app-home>
         </section>
-        <section id="about-me">
+        <section class="portfolio__section" id="about-me">
             <app-about-me></app-about-me>
+        </section>
+        <section class="portfolio__section">
             <app-skills></app-skills>
         </section>
-        <section id="my-work">
+        <section class="portfolio__section" id="my-work">
             <app-my-works></app-my-works>
         </section>
-        <section id="contact">
+        <section class="portfolio__section" id="contact">
             <app-contact></app-contact>
         </section>
     </div>

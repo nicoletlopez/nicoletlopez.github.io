@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import { SidebarMenu } from '../../config/sidebar-menu';
 import * as $ from 'jquery';
 import { SidebarWidthService } from 'src/app/services/sidebar-width/sidebar-width.service';
+import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -18,8 +19,8 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.jquerySmoothScroll();
+    this.setInitialActiveMenuItem();
   }
-
 
   @HostListener('window:resize')
   @HostListener('window:load')
@@ -27,26 +28,28 @@ export class SidebarComponent implements OnInit {
     this.swService.setWidth(this.sidebar.nativeElement.getBoundingClientRect().width);
   }
 
+  setInitialActiveMenuItem() {
+    this.selectedLink = window.location.hash || `#${this.menuItems[0].fragment}`;
+  }
+
   jquerySmoothScroll() {
     const that = this;
     $(document).ready(function () {
-      $('a[href*="#"]')
+      $('a[data-scroll]')
         // Remove links that don't actually link to anything
-        .not('[href="#"]')
-        .not('[href="#0"]')
         .on('click', function (event) {
           const currentTarget: any = event.currentTarget;
-          // On-page links
+          let hash = currentTarget.hash;
           if (
             location.pathname.replace(/^\//, '') == currentTarget.pathname.replace(/^\//, '')
             &&
             location.hostname == currentTarget.hostname
-            && that.selectedLink !== currentTarget.hash
+            && that.selectedLink !== hash
           ) {
             // Figure out element to scroll to
-            var target = $(currentTarget.hash);
-            target = target.length ? target : $('[name=' + currentTarget.hash.slice(1) + ']');
-            that.selectedLink = currentTarget.hash;
+            var target = $(hash);
+            target = target.length ? target : $('[name=' + hash.slice(1) + ']');
+            that.selectedLink = hash;
             // Does a scroll target exist?
             if (target.length) {
               // Only prevent default if animation is actually gonna happen
@@ -65,7 +68,7 @@ export class SidebarComponent implements OnInit {
                   $target.focus(); // Set focus again
                 };
               });
-              window.location.hash = currentTarget.hash;
+              window.location.hash = hash;
             }
           }
         });

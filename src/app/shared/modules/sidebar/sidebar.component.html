@@ -4,9 +4,9 @@
         <section class="sidebar__body">
             <ul class="sidebar__body-container">
                 <li *ngFor="let nav of menuItems" class="sidebar__item">
-                    <a class="sidebar__anchor" [attr.href]="'#'+nav.fragment">
+                    <a class="sidebar__anchor" [attr.data-scroll]="nav.fragment" [attr.href]="'#'+nav.fragment" [class.sidebar__anchor--active]="selectedLink == '#'+nav.fragment">
                         <i [class]="nav.icon"></i>
-                        <h4 class="sidebar__label">{{nav.label}}</h4>
+                        <h6 class="sidebar__label">{{nav.label}}</h6>
                     </a>
                 </li>
             </ul>
