@@ -1,7 +1,11 @@
 @import "themes/colors";
 @import "vendors/bootstrap";
+@import "~bootstrap/scss/variables";
 
 .sidebar {
+    z-index: $zindex-fixed;
+    background: white;
+
     & * {
         transition: .25s
     }
@@ -24,6 +28,10 @@
 
         i {
             font-size: 1.25rem;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 2rem;
+            }
         }
 
         &:hover {
