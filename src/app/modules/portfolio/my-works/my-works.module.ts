@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MyWorksComponent } from './my-works.component';
+import { ContentHeaderModule } from 'src/app/shared/modules/content-header/content-header.module';
 
 
 @NgModule({
@@ -10,6 +11,7 @@ import { MyWorksComponent } from './my-works.component';
   ],
   imports: [
     CommonModule,
+    ContentHeaderModule,
   ],
   exports: [
     MyWorksComponent,

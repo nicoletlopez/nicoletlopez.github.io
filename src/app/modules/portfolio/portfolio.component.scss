@@ -14,9 +14,6 @@ main {
 
     &__section {
         padding: 5rem 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
         &:nth-child(even) {
             background: $secondary-color;
