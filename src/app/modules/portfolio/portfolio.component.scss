@@ -1,12 +1,10 @@
 @import 'themes/colors';
 
-main {
+.portfolio {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: auto 1fr;
-}
+    height: 100%;
 
-.portfolio {
     &__body {
         // max-height: 100vh;
         // overflow: auto;

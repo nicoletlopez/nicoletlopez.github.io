@@ -1,8 +1,8 @@
-<main class="portfolio">
+<main class="portfolio" [ngStyle]="{'grid-template-columns': contentOffset+'px 1fr'}">
     <aside>
         <app-sidebar></app-sidebar>
     </aside>
-    <div class="portfolio__body" [style.margin-left.px]="contentOffset">
+    <div class="portfolio__body">
         <section class="portfolio__section" id="home">
             <app-home></app-home>
         </section>
